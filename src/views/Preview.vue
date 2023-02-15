@@ -6,7 +6,7 @@
 </template>
 <script>
 import Pdfh5 from 'pdfh5'
-  import "pdfh5/css/pdfh5.css";
+import 'pdfh5/css/pdfh5.css'
 export default {
   name: 'Preview',
   components: {
@@ -55,13 +55,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.Preview{
-height: 100vh;
-width: 100vw;
-#pdf{
-  height: 100%;
-  width: 100%;
-  position: relative;
-}
+.Preview {
+  height: 100vh;
+  width: 100vw;
+  #pdf {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
 }
 </style>
