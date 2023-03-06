@@ -30,7 +30,11 @@ export default {
      * 获取选中的pdf文件
      */
     getPdf () {
+      // 采用网络图片
+      // const url = 'https://pdf-lib.js.org/assets/with_update_sections.pdf'
+      // return fetch(url).then(res => res.arrayBuffer())
       return new Promise((resolve, reject) => {
+        // 选择图片
         const inputFile = this.$refs.fileInput.files[0]
         const reader = new FileReader()
         reader.readAsDataURL(inputFile)

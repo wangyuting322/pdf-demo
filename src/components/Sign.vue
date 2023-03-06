@@ -230,18 +230,18 @@ export default {
         this.canvasTxt.putImageData(resImgData, 0, 0)
         this.canvasTxt.globalCompositeOperation = 'source-over'
         if (this.isCrop) {
-          const crop_area = this.getCropArea(resImgData.data)
-          let crop_canvas = document.createElement('canvas')
-          const crop_ctx = crop_canvas.getContext('2d')
-          crop_canvas.width = crop_area[2] - crop_area[0]
-          crop_canvas.height = crop_area[3] - crop_area[1]
-          const crop_imgData = this.canvasTxt.getImageData(...crop_area)
-          crop_ctx.globalCompositeOperation = 'destination-over'
-          crop_ctx.putImageData(crop_imgData, 0, 0)
-          crop_ctx.fillStyle = this.myBg
-          crop_ctx.fillRect(0, 0, crop_canvas.width, crop_canvas.height)
-          resultImg = crop_canvas.toDataURL()
-          crop_canvas = null
+          const cropArea = this.getCropArea(resImgData.data)
+          let cropCanvas = document.createElement('canvas')
+          const cropCtx = cropCanvas.getContext('2d')
+          cropCanvas.width = cropArea[2] - cropArea[0]
+          cropCanvas.height = cropArea[3] - cropArea[1]
+          const cropImgData = this.canvasTxt.getImageData(...cropArea)
+          cropCtx.globalCompositeOperation = 'destination-over'
+          cropCtx.putImageData(cropImgData, 0, 0)
+          cropCtx.fillStyle = this.myBg
+          cropCtx.fillRect(0, 0, cropCanvas.width, cropCanvas.height)
+          resultImg = cropCanvas.toDataURL()
+          cropCanvas = null
         }
         resolve(resultImg)
       })

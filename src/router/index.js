@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 import Preview from '../views/Preview.vue'
 import SignTest from '../views/SignTest.vue'
 import EditPic from '../views/EditPic.vue'
+import pdfSign from '../views/pdfSign.vue'
 
 Vue.use(VueRouter)
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/EditPic',
     name: 'EditPic',
     component: EditPic
+  },
+  {
+    path: '/pdfSign',
+    name: 'pdfSign',
+    component: pdfSign
   }
 ]
 
